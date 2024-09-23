@@ -1,4 +1,7 @@
-/* Gradient animation (optional) */
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+/* Gradient animation */
 @keyframes gradientShift {
     0% {
         background-position: 0% 50%;
@@ -13,7 +16,7 @@
 
 /* Body and background animation */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;  /* Updated font */
     margin: 0;
     padding: 0;
     display: flex;
@@ -26,8 +29,20 @@ body {
     color: white;
 }
 
-/* Container with transparent background */
+/* Improved Gradient for Mobile */
+@media (max-width: 768px) {
+    body {
+        background-size: 400% 400%; /* Slower shift on smaller screens */
+    }
+}
+
+
+/* Ensure the container uses column layout */
 .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 90%;
     max-width: 400px;
     background-color: rgba(255, 255, 255, 0); /* Transparent background */
@@ -75,29 +90,44 @@ body {
     transform: scale(1.2);
 }
 
-/* Links */
+/* Link Buttons - Now aligned vertically */
 .links {
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 1.5rem;  /* Add space between buttons */
     margin-top: 2rem;
 }
 
 .link-button {
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    font-weight: 600;
     color: white;
     padding: 1rem 2rem;
-    background-color: #2980b9;
+    background-color: #303e4d; /* Updated button color */
     border-radius: 50px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
+    display: inline-block;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .link-button:hover {
-    background-color: #3498db;
-    transform: translateY(-5px);
+    background-color: #3b4d61; /* Lighter color on hover */
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
+
+/* Ensure footer is placed below the links */
+footer {
+    width: 100%;
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: white;
+    opacity: 0.8;
+}
+
 
 /* Media Queries for Mobile */
 @media (max-width: 768px) {
