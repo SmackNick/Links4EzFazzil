@@ -1,43 +1,36 @@
 /* Importing Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Merriweather&display=swap');
 
 /* Gradient animation */
 @keyframes gradientShift {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* Body and background animation */
 body {
-    font-family: 'Inter', sans-serif;  /* Updated font */
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background: linear-gradient(45deg, #4a90e2, #e74c3c, #f39c12, #2ecc71);
+    min-height: 100vh;
+    background: linear-gradient(45deg, #1E3A8A, #0D9488, #F97316, #FCD34D);
     background-size: 300% 300%;
-    animation: gradientShift 10s ease infinite;
+    animation: gradientShift 15s ease infinite;
     color: white;
 }
 
 /* Improved Gradient for Mobile */
 @media (max-width: 768px) {
     body {
-        background-size: 400% 400%; /* Slower shift on smaller screens */
+        background-size: 400% 400%;
     }
 }
 
-
-/* Ensure the container uses column layout */
+/* Container */
 .container {
     display: flex;
     flex-direction: column;
@@ -45,57 +38,66 @@ body {
     align-items: center;
     width: 90%;
     max-width: 400px;
-    background-color: rgba(255, 255, 255, 0); /* Transparent background */
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     padding: 2rem;
-    border-radius: 10px;
+    border-radius: 20px;
     text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 /* Profile section */
 .profile img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    margin-bottom: 1rem;
-    border: 3px solid #fff;
+    margin-bottom: 1.5rem;
+    border: 4px solid #e3e1df;
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
 }
 
 .profile h1 {
-    font-size: 2.5rem;
+    font-size: 2.9rem;
     margin: 0;
-    color: white;
+    color: #edeef5;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .profile p {
+    font-family: 'Merriweather', serif;
     font-size: 1.2rem;
     margin-top: 0.5rem;
     color: white;
+    opacity: 0.9;
 }
 
 /* Social Media Icons */
 .social-icons {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1.2rem;
 }
 
 .social-icons a img {
-    width: 32px;
-    height: 32px;
-    transition: transform 0.3s ease;
+    width: 36px;
+    height: 36px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 .social-icons a img:hover {
-    transform: scale(1.2);
+    transform: scale(1.2) rotate(5deg);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 }
 
-/* Link Buttons - Now aligned vertically */
+/* Link Buttons */
 .links {
     display: flex;
-    flex-direction: column; /* Stack buttons vertically */
-    gap: 1.5rem;  /* Add space between buttons */
+    flex-direction: column;
+    gap: 1.5rem;
     margin-top: 2rem;
+    width: 100%;
 }
 
 .link-button {
@@ -104,21 +106,23 @@ body {
     font-weight: 600;
     color: white;
     padding: 1rem 2rem;
-    background-color: #303e4d; /* Updated button color */
+    background-color: #253845;
     border-radius: 50px;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
     text-align: center;
     display: inline-block;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
 }
 
 .link-button:hover {
-    background-color: #3b4d61; /* Lighter color on hover */
-    transform: translateY(-5px) scale(1.05);
+    background-color: #F97316;
+    transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-color: #FCD34D;
 }
 
-/* Ensure footer is placed below the links */
+/* Footer */
 footer {
     width: 100%;
     margin-top: 2rem;
@@ -127,7 +131,6 @@ footer {
     color: white;
     opacity: 0.8;
 }
-
 
 /* Media Queries for Mobile */
 @media (max-width: 768px) {
